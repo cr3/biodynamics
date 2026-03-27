@@ -77,18 +77,18 @@ Setting up
     .. code-block:: text
 
         > git config --global credential.helper manager
-        > git clone https://github.com/cr3/changeme
-        Cloning into 'changeme'...
+        > git clone https://github.com/cr3/biodynamics
+        Cloning into 'biodynamics'...
 
     - Select "manager"
     - Check "Always use this from now on" and press "Select"
     - Sign in with token and paste your token
 
--   Change into the ``changeme`` directory:
+-   Change into the ``biodynamics`` directory:
 
     .. code-block:: text
 
-        > cd changeme
+        > cd biodynamics
 
 -   Create a virtualenv.
 
@@ -176,7 +176,7 @@ Update the apidoc when adding new modules:
 
 .. code-block:: text
 
-    > sphinx-apidoc --force --implicit-namespaces -o docs changeme
+    > sphinx-apidoc --force --implicit-namespaces -o docs biodynamics
 
 Open ``build/html/index.html`` in your browser to view the docs.
 

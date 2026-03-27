@@ -1,12 +1,12 @@
 [project]
-name = "changeme"
+name = "biodynamics"
 dynamic = ["version"]
-description = "changeme"
+description = "Biodynamics calendar"
 authors = [
-    {name = "changeme", email = "changeme@changeme.com"},
+    {name = "Marc Tardif", email = "marc@taram.ca"},
 ]
 readme = "README.rst"
-repository = "https://github.com/cr3/changeme"
+repository = "https://github.com/cr3/biodynamics"
 requires-python = ">=3.12,<4.0"
 
 [project.optional-dependencies]
@@ -91,7 +91,7 @@ addopts = [
     "--doctest-glob=*.rst",
 ]
 testpaths = [
-    "changeme",
+    "biodynamics",
     "docs",
     "tests",
 ]
@@ -100,7 +100,7 @@ testpaths = [
 #   https://coverage.readthedocs.io/en/latest/config.html
 [tool.coverage.paths]
 source = [
-    "changeme",
+    "biodynamics",
     "*/*/site-packages",
 ]
 
@@ -112,5 +112,5 @@ show_missing = true
 branch = true
 parallel = true
 source = [
-    "changeme",
+    "biodynamics",
 ]
