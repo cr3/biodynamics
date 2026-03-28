@@ -30,6 +30,7 @@ def test_plant_type_fruit(mock_moon):
     """Aries (Fire) maps to Fruit."""
     result = plant_type(date(2026, 1, 1))
     assert result == PlantType.FRUIT
+    assert result == "🍎"
 
 
 @patch("biodynamics.calendar.moon_constellation", return_value=Constellation.TAURUS)
@@ -37,6 +38,7 @@ def test_plant_type_root(mock_moon):
     """Taurus (Earth) maps to Root."""
     result = plant_type(date(2026, 1, 1))
     assert result == PlantType.ROOT
+    assert result == "🥕"
 
 
 @patch("biodynamics.calendar.moon_constellation", return_value=Constellation.GEMINI)
@@ -44,6 +46,7 @@ def test_plant_type_flower(mock_moon):
     """Gemini (Air) maps to Flower."""
     result = plant_type(date(2026, 1, 1))
     assert result == PlantType.FLOWER
+    assert result == "🌸"
 
 
 @patch("biodynamics.calendar.moon_constellation", return_value=Constellation.CANCER)
@@ -51,6 +54,7 @@ def test_plant_type_leaf(mock_moon):
     """Cancer (Water) maps to Leaf."""
     result = plant_type(date(2026, 1, 1))
     assert result == PlantType.LEAF
+    assert result == "🌿"
 
 
 @patch("biodynamics.calendar.plant_type", return_value=PlantType.FRUIT)
@@ -71,7 +75,7 @@ def test_generate_calendar_event_summary(mock_plant_type):
     """Events use the plant type as summary."""
     cal = generate_calendar(date(2026, 4, 1), date(2026, 4, 2))
     ical = cal.to_ical().decode()
-    assert "Root" in ical
+    assert "🥕" in ical
 
 
 @patch("biodynamics.calendar.plant_type", return_value=PlantType.LEAF)

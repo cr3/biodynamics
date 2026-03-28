@@ -11,10 +11,10 @@ from biodynamics.moon import Constellation, moon_constellation
 class PlantType:
     """Plant types associated with classical elements."""
 
-    FRUIT = "Fruit"
-    ROOT = "Root"
-    FLOWER = "Flower"
-    LEAF = "Leaf"
+    FRUIT = "🍎"
+    ROOT = "🥕"
+    FLOWER = "🌸"
+    LEAF = "🌿"
 
 
 # Mapping from constellation to plant type via classical elements.
@@ -42,7 +42,7 @@ def plant_type(d: date) -> str:
     """Return the biodynamic plant type for a given date.
 
     >>> from datetime import date
-    >>> plant_type(date(2026, 3, 28)) in ('Fruit', 'Root', 'Flower', 'Leaf')
+    >>> plant_type(date(2026, 3, 28)) in ('🍎', '🥕', '🌸', '🌿')
     True
     """
     ts = load.timescale()
