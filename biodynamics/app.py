@@ -1,5 +1,6 @@
 """FastAPI application for the biodynamics calendar."""
 
+import argparse
 from datetime import date, timedelta
 
 from fastapi import FastAPI, Query
@@ -7,7 +8,7 @@ from fastapi.responses import Response
 
 from biodynamics.calendar import generate_calendar
 
-app = FastAPI()
+app = FastAPI(title="Biodynamics", docs_url="/biodynamics/docs")
 
 _DEFAULT_DAYS = 90
 
@@ -28,3 +29,30 @@ async def calendar(
         content=cal.to_ical(),
         media_type="text/calendar",
     )
+
+
+def main():
+    """Entry point for the biodynamics web server."""
+    import uvicorn
+
+    parser = argparse.ArgumentParser(
+        description="Biodynamics web server",
+    )
+    parser.add_argument(
+        "--host",
+        default="127.0.0.1",
+        help="bind address (default: 127.0.0.1)",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=8000,
+        help="port (default: 8000)",
+    )
+    parser.add_argument(
+        "--reload",
+        action="store_true",
+        help="auto-reload",
+    )
+    args = parser.parse_args()
+    uvicorn.run("biodynamics.app:app", host=args.host, port=args.port, reload=args.reload)
