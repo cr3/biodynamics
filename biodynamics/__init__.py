@@ -1,2 +1,0 @@
-def biodynamics():
-    return True
